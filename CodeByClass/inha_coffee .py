@@ -1,14 +1,14 @@
-def with_milk(f):
-    def wrapper(*args):
-        coffee = f(*args)
+def with_milk(dd):
+    def wraappers(*aa):
+        coffee = dd(*aa)
         return Coffee(f"{coffee.description} (우유 추가)", coffee.cost + 100)
-    return wrapper
+    return wraappers
 
-def with_mocha(f):
-    def wrapper(*args,):
-        coffee = f(*args)
+def with_mocha(dd):
+    def wrappers(*aab):
+        coffee = dd(*aab)
         return Coffee(f"{coffee.description} (모카 추가)", coffee.cost + 200)
-    return wrapper
+    return wrappers
 
 
 class Coffee:
@@ -21,6 +21,8 @@ class Coffee:
 
 
 @with_milk
+@with_mocha
+@with_mocha
 @with_mocha
 def espresso():
     return Coffee("에스프레소", 2000)
